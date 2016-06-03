@@ -1,0 +1,21 @@
+<header>
+    <div class="container">
+        <div class="row">
+            {% if site.github_username %}
+                <a href="https://github.com/{{ site.github_username }}">
+                    <i class="fa fa-github-square"></i>
+                </a>
+            {% endif %}
+            {% if site.linkedin_username %}
+                <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
+                    <i class="fa fa-linkedin-square"></i>
+                </a>
+            {% endif %}
+            {% if site.twitter_username %}
+                <a href="https://twitter.com/{{ site.twitter_username }}">
+                    <i class="fa fa-twitter-square"></i>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</header>
