@@ -23,8 +23,30 @@ layout: default
                     <br>Feel free to contact me and inquire about working together. I am very responsive to messages.</p>
 
                 <p class="cta">
-                    <a role="button" tabindex="0" on="tap:contact-lightbox" class="go-button">Hire me today <i class="fa fa-play"></i></a>
+                    <a role="button" tabindex="0" on="tap:contact-lightbox" class="go-button" id="hire-me">Hire me today <i class="fa fa-play"></i></a>
                 </p>
+
+                <amp-analytics type="googleanalytics" id="analytics-hire-me">
+                    <script type="application/json">
+                        {
+                            "vars": {
+                                "account": "{{ site.uaid }}"
+                            },
+                            "triggers": {
+                                "trackClickOnHireme" : {
+                                    "on": "click",
+                                    "selector": "#hire-me",
+                                    "request": "event",
+                                    "vars": {
+                                        "eventCategory": "click",
+                                        "eventAction": "Hire me"
+                                    }
+                                }
+                            }
+                        }
+                    </script>
+                </amp-analytics>
+
             </div>
         </div>
     </div>

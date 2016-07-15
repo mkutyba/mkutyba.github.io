@@ -15,6 +15,7 @@ url: "https://kutyba.it" # the base hostname & protocol for your site
 twitter_username: kutybait
 github_username:  mkutyba
 linkedin_username:  kutyba
+uaid: UA-4500350-12
 
 # Build settings
 markdown: kramdown
