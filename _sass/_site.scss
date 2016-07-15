@@ -203,6 +203,17 @@ section.hero {
     top: 0;
     right: 0;
     cursor: pointer;
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+
+    @include media("<phone") {
+      font-size: 3em;
+      width: 62px;
+      height: 62px;
+      line-height: 62px;
+    }
   }
 }
 
