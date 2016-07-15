@@ -2,19 +2,82 @@
     <div class="container">
         <div class="row">
             {% if site.github_username %}
-                <a href="https://github.com/{{ site.github_username }}">
+                <a target="_blank" href="https://github.com/{{ site.github_username }}" id="github-link">
                     <i class="fa fa-github-square"></i>
                 </a>
+                <amp-analytics type="googleanalytics" id="analytics-github-link">
+                    <script type="application/json">
+                        {
+                            "vars": {
+                                "account": "{{ site.uaid }}"
+                            },
+                            "triggers": {
+                                "trackClickOnTwitterLink" : {
+                                    "on": "click",
+                                    "selector": "#github-link",
+                                    "request": "social",
+                                    "vars": {
+                                        "socialNetwork": "github",
+                                        "socialAction": "open",
+                                        "socialTarget": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
+                                    }
+                                }
+                            }
+                        }
+                    </script>
+                </amp-analytics>
             {% endif %}
             {% if site.linkedin_username %}
-                <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
+                <a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" id="linkedin-link">
                     <i class="fa fa-linkedin-square"></i>
                 </a>
+                <amp-analytics type="googleanalytics" id="analytics-linkedin-link">
+                    <script type="application/json">
+                        {
+                            "vars": {
+                                "account": "{{ site.uaid }}"
+                            },
+                            "triggers": {
+                                "trackClickOnTwitterLink" : {
+                                    "on": "click",
+                                    "selector": "#linkedin-link",
+                                    "request": "social",
+                                    "vars": {
+                                        "socialNetwork": "linkedin",
+                                        "socialAction": "open",
+                                        "socialTarget": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
+                                    }
+                                }
+                            }
+                        }
+                    </script>
+                </amp-analytics>
             {% endif %}
             {% if site.twitter_username %}
-                <a href="https://twitter.com/{{ site.twitter_username }}">
+                <a target="_blank" href="https://twitter.com/{{ site.twitter_username }}" id="twitter-link">
                     <i class="fa fa-twitter-square"></i>
                 </a>
+                <amp-analytics type="googleanalytics" id="analytics-twitter-link">
+                    <script type="application/json">
+                        {
+                            "vars": {
+                                "account": "{{ site.uaid }}"
+                            },
+                            "triggers": {
+                                "trackClickOnTwitterLink" : {
+                                    "on": "click",
+                                    "selector": "#twitter-link",
+                                    "request": "social",
+                                    "vars": {
+                                        "socialNetwork": "twitter",
+                                        "socialAction": "open",
+                                        "socialTarget": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
+                                    }
+                                }
+                            }
+                        }
+                    </script>
+                </amp-analytics>
             {% endif %}
         </div>
     </div>
