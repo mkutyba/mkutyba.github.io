@@ -222,3 +222,8 @@ amp-lightbox {
     background: rgba($white, 0.5);
   }
 }
+
+a.link-unstyled {
+  text-decoration: none;
+  color: inherit;
+}
