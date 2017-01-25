@@ -54,10 +54,10 @@
                 </amp-analytics>
             {% endif %}
             {% if site.twitter_username %}
-                <a target="_blank" href="https://twitter.com/{{ site.twitter_username }}" id="twitter-link">
+                <a target="_blank" href="https://twitter.com/{{ site.twitter_username }}" id="tt-link">
                     <i class="fa fa-twitter-square"></i>
                 </a>
-                <amp-analytics type="googleanalytics" id="analytics-twitter-link">
+                <amp-analytics type="googleanalytics" id="analytics-tt-link">
                     <script type="application/json">
                         {
                             "vars": {
@@ -66,7 +66,7 @@
                             "triggers": {
                                 "trackClickOnTwitterLink" : {
                                     "on": "click",
-                                    "selector": "#twitter-link",
+                                    "selector": "#tt-link",
                                     "request": "social",
                                     "vars": {
                                         "socialNetwork": "twitter",
