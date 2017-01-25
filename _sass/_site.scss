@@ -13,7 +13,7 @@ body {
 
   background-size: cover;
   background-attachment: fixed;
-  background-image: url("../assets/images/rainbow-background-1149610.jpg");
+  background-image: url("../assets/images/bg-no-credits.jpg");
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -226,4 +226,11 @@ amp-lightbox {
 a.link-unstyled {
   text-decoration: none;
   color: inherit;
+}
+
+footer {
+  margin: 80px 20px 0;
+  text-align: right;
+  font-size: 0.8em;
+  opacity: 0.5;
 }
