@@ -1,0 +1,18 @@
+---
+layout: blog
+---
+
+<div class="container centered">
+    <div class="vspace"></div>
+
+    <header>
+        <h1>posts in category {{ page.category }}</h1>
+    </header>
+
+    {{ content }}
+
+    <div class="vspace"></div>
+</div>
+
+{% assign posts = site.categories[page.category] %}
+{% include archive.html %}

@@ -1,8 +1,18 @@
-<header>
+<header class="header">
     <div class="container">
-        <nav class="row">
-            {% if site.github_username %}
-                <a target="_blank" href="https://github.com/{{ site.github_username }}" id="github-link">
+        <div class="row">
+            <div class="six columns logo">
+                {% if page.url != "/" %}
+                <a href="/" rel="index">kutyba.it</a>
+                {% endif %}
+            </div>
+
+            <nav class="six columns">
+                <a href="/blog.html" style="display: none;">
+                    blog
+                </a>
+                {% if site.github_username %}
+                <a class="social-media" target="_blank" href="https://github.com/{{ site.github_username }}" id="github-link">
                     <i class="fa fa-github-square"></i>
                 </a>
                 <amp-analytics type="googleanalytics" id="analytics-github-link">
@@ -12,7 +22,7 @@
                                 "account": "{{ site.uaid }}"
                             },
                             "triggers": {
-                                "trackClickOnGithubLink" : {
+                                "trackClickOnGithubLink": {
                                     "on": "click",
                                     "selector": "#github-link",
                                     "request": "social",
@@ -26,9 +36,9 @@
                         }
                     </script>
                 </amp-analytics>
-            {% endif %}
-            {% if site.linkedin_username %}
-                <a target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" id="linkedin-link">
+                {% endif %}
+                {% if site.linkedin_username %}
+                <a class="social-media" target="_blank" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" id="linkedin-link">
                     <i class="fa fa-linkedin-square"></i>
                 </a>
                 <amp-analytics type="googleanalytics" id="analytics-linkedin-link">
@@ -38,7 +48,7 @@
                                 "account": "{{ site.uaid }}"
                             },
                             "triggers": {
-                                "trackClickOnLinkedinLink" : {
+                                "trackClickOnLinkedinLink": {
                                     "on": "click",
                                     "selector": "#linkedin-link",
                                     "request": "social",
@@ -52,9 +62,9 @@
                         }
                     </script>
                 </amp-analytics>
-            {% endif %}
-            {% if site.twitter_username %}
-                <a target="_blank" href="https://twitter.com/{{ site.twitter_username }}" id="tt-link">
+                {% endif %}
+                {% if site.twitter_username %}
+                <a class="social-media" target="_blank" href="https://twitter.com/{{ site.twitter_username }}" id="tt-link">
                     <i class="fa fa-twitter-square"></i>
                 </a>
                 <amp-analytics type="googleanalytics" id="analytics-tt-link">
@@ -64,7 +74,7 @@
                                 "account": "{{ site.uaid }}"
                             },
                             "triggers": {
-                                "trackClickOnTwitterLink" : {
+                                "trackClickOnTwitterLink": {
                                     "on": "click",
                                     "selector": "#tt-link",
                                     "request": "social",
@@ -78,7 +88,8 @@
                         }
                     </script>
                 </amp-analytics>
-            {% endif %}
-        </nav>
+                {% endif %}
+            </nav>
+        </div>
     </div>
 </header>

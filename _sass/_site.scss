@@ -13,7 +13,7 @@ body {
 
   background-size: cover;
   background-attachment: fixed;
-  background-image: url("../assets/images/bg-no-credits.jpg");
+  background-image: url("/assets/images/bg-no-credits.jpg");
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -30,6 +30,16 @@ h1 {
 h2 {
   font-size: 2em;
   margin: 0;
+}
+
+a {
+  color: $white;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    color: $primary;
+  }
 }
 
 .container {
@@ -53,6 +63,7 @@ h2 {
   width: 100%;
   float: left;
   box-sizing: border-box;
+  min-height: 1px;
 
   @include media(">870px") {
     margin-left: 4%;
@@ -110,16 +121,37 @@ h2 {
   height: 20px;
 }
 
-header {
-  font-size: 2em;
-  text-align: right;
+header.header {
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+
+  .logo {
+    font-size: 1.5em;
+
+    @include media("<tablet") {
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  nav {
+    font-size: 1.5em;
+    line-height: 1.25em;
+    text-align: right;
+
+    @include media("<tablet") {
+      text-align: center;
+    }
+  }
 
   a {
     color: $white;
     text-decoration: none;
+    display: inline-block;
 
-    @include media("<tablet") {
-      font-size: 1.5em;
+    &.social-media {
+      font-size: 1.25em;
+      vertical-align: bottom;
     }
 
     &:hover,
@@ -130,11 +162,12 @@ header {
 }
 
 section.hero {
-  padding: 80px 0 20px;
+  margin-top: 5em;
+  margin-bottom: 2em;
   position: relative;
 
   @include media("<tablet") {
-    padding-top: 40px;
+    margin-top: 2.5em;
   }
 
   .container {
@@ -228,9 +261,52 @@ a.link-unstyled {
   color: inherit;
 }
 
-footer {
+footer.footer {
   margin: 80px 20px 0;
   text-align: right;
   font-size: 0.8em;
   opacity: 0.5;
+}
+
+section.blog {
+  .container {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  article {
+    header {
+      a {
+        text-decoration: none;
+      }
+    }
+
+    .main-text {
+      a {
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+
+    &.single {
+      .main-text {
+        min-height: 450px;
+      }
+    }
+  }
+
+  .meta {
+    color: $primary;
+
+    a {
+      color: $primary;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+    }
+  }
 }
