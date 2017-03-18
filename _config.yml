@@ -24,3 +24,16 @@ permalink:  /blog/:title.html
 
 sass:
   style: compressed
+
+gems:
+  - jekyll-archives
+  - jekyll-redirect-from
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: 'archive'
+  permalinks:
+    tag: '/blog/tag/:name/'
+    category: '/blog/category/:name/'
