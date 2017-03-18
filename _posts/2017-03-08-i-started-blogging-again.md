@@ -4,7 +4,6 @@ title:      "I started blogging... again"
 date:       2017-03-08 13:37:00 +0100
 categories: [Get Noticed!]
 tags:       [get noticed, daj się poznać]
-permalink:  /:title.html
 ---
 
 I took the challenge to write my very own blog and applied for the competition ["Get Noticed!"][1] (Polish: "Daj Się Poznać").

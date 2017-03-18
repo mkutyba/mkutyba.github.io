@@ -20,5 +20,7 @@ uaid: UA-4500350-12
 # Build settings
 markdown: kramdown
 
+permalink:  /blog/:title.html
+
 sass:
   style: compressed

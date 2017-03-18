@@ -4,7 +4,6 @@ title:      "Formularze Konsumenckie - opis projektu i technologia"
 date:       2017-03-12 22:04:00 +0100
 categories: [Get Noticed!]
 tags:       [get noticed, daj się poznać, react]
-permalink:  /:title.html
 ---
 
 Przyszedł czas na kolejny wpis z cyklu Daj Się Poznać. Na razie będę pisał po polsku, bo tak będzie szybciej. Może
