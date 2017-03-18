@@ -36,3 +36,5 @@ defaults:
       path: ""
     values:
       image: /assets/images/mateusz-kutyba.png
+
+exclude: [vendor]
