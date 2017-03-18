@@ -43,34 +43,35 @@ chociażby ze względu na [popularność Androida w Polsce][10], dlatego korzyst
 dosyć intuicyjne. Z resztą nie oszukujmy się, to nie jest jakiś bardzo skomplikowany projekt.
 
 Tworzenie szkieletu aplikacji jest "stosunkowo proste". Według dokumentacji kreatora wystarczy:
-```bash
+
+{% highlight bash %}
 npm install -g create-react-app
 
 create-react-app my-app
 cd my-app/
 npm start
-```
+{% endhighlight %}
+
 Aplikacja działa i jest dostępna pod adresem http://localhost:3000/. Można teraz zacząć pisać. Od początku jest live
 reload, więc wszystkie zmiany są od razu widoczne w przeglądarce, nie trzeba nic konfigurować.
 
 Na początku zainstalowałem [`react-router`][11] i wspomniany wcześniej [`material-ui`][12] (a wraz z nim
 [`react-tap-event-plugin`][13]). Do pliku `index.html` dołączyłem kawałek kodu odpowiedzialny za ładowanie czcionki
 [Roboto][14]:
-```JavaScript
-<script>
-  var WebFontConfig = {
-    google: { families: [ 'Roboto:400,300,500:latin' ] }
-  };
-  (function() {
-    var wf = document.createElement('script');
-    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-    wf.type = 'text/javascript';
-    wf.async = 'true';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(wf, s);
-  })();
-</script>
-```
+
+{% highlight javascript %}
+var WebFontConfig = {
+  google: { families: [ 'Roboto:400,300,500:latin' ] }
+};
+(function() {
+  var wf = document.createElement('script');
+  wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+  wf.type = 'text/javascript';
+  wf.async = 'true';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(wf, s);
+})();
+{% endhighlight %}
 
 ## Struktura aplikacji i ruter
 Poniżej prezentuję wstępną strukturę aplikacji, podział na podstrony.
@@ -87,7 +88,7 @@ Poniżej prezentuję wstępną strukturę aplikacji, podział na podstrony.
   - formularz n
 
 Odwzorowanie takiej struktury za pomocą routera:
-```JSX
+{% highlight jsx %}
 <Router history={browserHistory}>
     <Route path="/" component={App}>
         <IndexRoute component={Home}/>
@@ -99,7 +100,7 @@ Odwzorowanie takiej struktury za pomocą routera:
         </Route>
     </Route>
 </Router>
-```
+{% endhighlight %}
 
 Link do repozytorium projektu [https://github.com/mkutyba/FormularzeKonsumenckie][15]
 
