@@ -309,11 +309,34 @@ section.blog {
           text-decoration: none;
         }
       }
+
+      img.thumbnail {
+        float: left;
+        width: 25%;
+        height: auto;
+        margin-right: 1em;
+
+        @include media("<tablet") {
+          width: 33%;
+        }
+
+        @include media("<phone") {
+          width: 100%;
+          margin-right: 0;
+        }
+      }
     }
 
     &.single {
       .main-text {
         min-height: 450px;
+
+        .cover {
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
       }
     }
   }

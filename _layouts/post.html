@@ -13,6 +13,17 @@ layout: blog
             </p>
         </header>
         <div class="main-text">
+            {% if page.image %}
+            <figure class="cover">
+                <img src="{{ page.image }}" alt="{% if page.image_caption %}{{ page.image_caption | xml_escape }}{% else %}{{ page.title }}{% endif %}" width="960" height="480">
+                {% if page.image_caption %}
+                <figcaption>
+                    {{ page.image_caption }}
+                </figcaption>
+                {% endif %}
+            </figure>
+            {% endif %}
+
             {{ content }}
         </div>
         <footer class="meta">
