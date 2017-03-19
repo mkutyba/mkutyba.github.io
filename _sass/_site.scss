@@ -48,7 +48,15 @@ abbr {
 }
 
 figure {
-  margin: 0 1em;
+  margin: 0;
+
+  pre {
+    margin: 1em;
+  }
+}
+
+figcaption {
+  color: $primary;
 }
 
 pre {
