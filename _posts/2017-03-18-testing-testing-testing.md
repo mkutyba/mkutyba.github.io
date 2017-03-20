@@ -1,22 +1,22 @@
 ---
 layout:        post
-title:         "Testy, testy, testy"
+title:         "Testing, testing, testing"
 date:          2017-03-19 23:33:00 +0100
 categories:    [Get Noticed!]
 tags:          [get noticed, daj się poznać, react, testing, jest]
 image:         /assets/images/103084-OM8M26-164.jpg
-image_caption: Lista kontrolna <a href='http://www.freepik.com/free-vector/hand-drawn-background-of-clipboard-with-checklist_1069873.htm'>Designed by Freepik</a>
-excerpt:       Czym jest aplikacja bez testów? Dzisiaj opiszę w jaki sposób skonfigurowałem testy, czego używam do testowania oraz jak piszę proste testy jednostkowe.
+image_caption: Checklist <a href='http://www.freepik.com/free-vector/hand-drawn-background-of-clipboard-with-checklist_1069873.htm'>Designed by Freepik</a>
+excerpt:       What is an app without tests? Today I will describe how I configured tests, what do I use for testing and how do I write simple unit tests.
 ---
 
-Czym jest aplikacja bez testów? Dzisiaj opiszę w jaki sposób skonfigurowałem testy, czego używam do testowania oraz jak
-piszę proste testy jednostkowe.
+What is an app without tests? Today I will describe how I configured tests, what do I use for testing and how do I write
+simple unit tests.
 
-Właściwie kod miałem już gotowy na początku tygodnia, ale jakoś nie mogłem się zebrać, żeby opisać kolejny etap. Aby nie
-było tygodnia, w którym nic nie opublikowałem, nadrabiam zaległości w niedzielną noc.
+Actually the code was ready at the beginning of the week, but somehow I couldn't get to describe the next step. To not
+let it be a week without posting, I'm catching up on Sunday night.
 
-## Na początek
-Co dostajemy od razu, dzięki `create-react-project`, zajrzyjmy do pliku `package.json`:
+## First things first
+What we get right away thanks to `create-react-project`, let's look to the file `package.json`:
 
 {% highlight json %}
 {
@@ -29,8 +29,8 @@ Co dostajemy od razu, dzięki `create-react-project`, zajrzyjmy do pliku `packag
 }
 {% endhighlight %}
 
-Polecenie uruchamiające testy to `react-scripts test --env=jsdom`. No to patrzymy dalej, czym jest tajemniczy
-`react-scripts` (znajdziesz go oczywiście w katalogu `node_modules` lub na [githubie][1]):
+The command to run tests is `react-scripts test --env=jsdom`. Well, we look further what is the mysterious
+`react-scripts` (of course you will find it in the directory `node_modules` or on [github][1]):
 
 {% highlight javascript %}
 // create-react-app/packages/react-scripts/scripts/test.js
@@ -40,24 +40,23 @@ const jest = require('jest');
 jest.run(argv);
 {% endhighlight %}
 
-Czyli uruchamia testy za pomocą [Jest][2]. Jest nie wymaga żadnej szczególnej konfiguracji, dlatego nie ma nic więcej
-ciekawego do zobaczenia w tym pliku. Pliki z testami są wykrywane na podstawie nazwy. Powinny nazywać się `*.test.js`
-lub `*.spec.js`.
+So it runs tests using [Jest][2]. Jest doesn't require any particular configuration, therefore there is nothing more
+interesting to see in this file. Test files are detected based on the name. They should be named `*.test.js` or
+`*.spec.js`.
 
-Facebook [podpowiada][3] również, że Airbnb wydało narzędzie do testowania [Enzyme][4]. Warto go użyć. Dzięki niemu
-testowanie komponentów Reacta jest łatwiejsze. Zainstalowałem moduł uruchamiając polecenie
-`npm install enzyme --save-dev`. Zainstalowałem także [`jest-enzyme`][5]. Potrzebna była jeszcze jedna linijka
-konfiguracji:
+Facebook also [suggests][3] that Airbnb released [Enzyme][4] testing tool. It's worth using it. Thanks to it testing of
+React components is easier. I installed the module by running the command `npm install enzyme --save-dev`. I installed
+also [`jest-enzyme`][5]. What was needed was one more line in configuration:
 
 {% highlight javascript %}
 // src/setupTests.js
 import 'jest-enzyme';
 {% endhighlight %}
 
-## Pierwszy test
-Pierwszym komponentem, który chcę przetestować jest `App`, który stanowi niejako szablon całej aplikacji. Na razie
-znajduje się w nim nagłówek, nawigacja oraz wyświetlana jest zawartość poszczególnych podstron. `App` to ten komponent
-nadrzędny, do którego są dodawane poszczególne komponenty stanowiące podstrony. Dla przypomnienia definicja routingu:
+## First test
+The first component that I want to test is `App`, which is a kind of layout for the whole application. For now it
+contains the header, navigation and displays the content of individual pages. App is the parent component, to which are
+added the individual components which are subpages. As a reminder, the definition of routing below:
 
 {% highlight jsx %}
 <Route path="/" component={App}>
@@ -71,7 +70,7 @@ nadrzędny, do którego są dodawane poszczególne komponenty stanowiące podstr
 </Route>
 {% endhighlight %}
 
-Pierwszym podstawowym testem dla każdego komponentu może być sprawdzenie, czy w ogóle renderuje się.
+The first main test for each component may be to check whether it renders.
 
 {% highlight jsx %}
 it('renders without crashing', () => {
@@ -84,11 +83,10 @@ it('renders without crashing', () => {
 });
 {% endhighlight %}
 
-Czyli próbuję wyrenderować komponent za pomocą funkcji `ReactDOM.render` i w przypadku braku błędów test przechodzi
-poprawnie.
+So I'm trying to render a component using `ReactDOM.render` and if no errors the test passes.
 
 ## Enzyme
-Teraz wchodzi do gry Enzyme. Napiszę test, który sprawdza, czy komponent zawiera nagłówek z oczekiwanym tekstem.
+Now comes into play Enzyme. I write a test that checks whether the component contains a header with the expected text.
 
 {% highlight jsx %}
 it('contains header', () => {
@@ -103,10 +101,9 @@ it('contains header', () => {
 });
 {% endhighlight %}
 
-Mam do dyspozycji asercję [`toContainReact(ReactInstance:Object)`][6], więc łatwo poszło. Więcej asercji dla Reacta
-[tutaj][7].
+I can use an assertion [`toContainReact(ReactInstance:Object)`][6], so it was easy. More assertions for React [here][7].
 
-Kolejne testy to sprawdzenie, czy jest nawigacj oraz czy dzieci renderują się we właściwym miejscu:
+Another test is to check whether the navigation is present and children render in the right place:
 
 {% highlight jsx %}
 it('contains navigation', () => {
@@ -131,8 +128,8 @@ it('renders children when passed in', () => {
 });
 {% endhighlight %}
 
-Więcej testów [tutaj][8], a na koniec podam jeszcze konfigurację [Travis CI][9] - tak, tak, uruchomiłem CI dla tego
-projektu.
+More tests [here in my repo][8] and at the end I will add a configuration for [Travis CI][9] - yes, yes, I launched CI
+for this project.
 
 {% highlight yml %}
 language: node_js
@@ -148,15 +145,15 @@ notifications:
   email: false
 {% endhighlight %}
 
-W skrócie:
-- nodejs w wersji 6,
-- instalacja `npm install`,
-- testy `npm test`,
-- powiadomienia w Slacku zamiast na email.
+In brief:
+- nodejs version 6,
+- installation `npm install`,
+- tests `npm test`,
+- notifications in Slack instead of email.
 
-To tyle na początek testowania. Prawdziwa zabawa zacznie się, gdy powstanie prawdziwy interfejs w Material UI.
+That's it for the beginning of the testing. The real fun starts with a real interface in the Material UI.
 
-Link do repozytorium projektu [https://github.com/mkutyba/FormularzeKonsumenckie][10]
+Link to the project repository [https://github.com/mkutyba/FormularzeKonsumenckie][10]
 
 [1]: https://github.com/facebookincubator/create-react-app/tree/master/packages/react-scripts
 [2]: https://facebook.github.io/jest/

@@ -1,47 +1,47 @@
 ---
 layout:     post
-title:      "Formularze Konsumenckie - opis projektu i technologia"
+title:      "Consumer Forms - description of the project and technology"
 date:       2017-03-12 22:04:00 +0100
 categories: [Get Noticed!]
 tags:       [get noticed, daj się poznać, react]
 ---
 
-Przyszedł czas na kolejny wpis z cyklu Daj Się Poznać. Na razie będę pisał po polsku, bo tak będzie szybciej. Może
-kiedyś przetłumaczę teksty na język Szekspira.
+It's time for another post in the series Get Noticed! (Polish: "Daj Się Poznać"). Finally translated texts into English,
+enjoy!
 
-## Cel projektu
-Stworzenie internetowych formularzy konsumenckich - aplikacji internetowej działającej w przeglądarce.
+## Project objective
+Creating online forms for consumer - a web application running in a browser.
 
-## Założenia
-Działanie całkowicie w przeglądarce (frontend). Brak backendu, wypełnione formularze nie będą nigdzie przechowywane.
-Głównie ze względu na wymagania związane z przetwarzaniem danych osobowych. Nie chcę tracić czasu na pisanie regulaminu,
-polityki prywatności, zgłaszanie zbioru danych do
-<abbr title="Generalny Inspektor Ochrony Danych Osobowych">GIODO</abbr>, itp.
+## The assumptions
+Running completely in the browser (frontend). No backend, completed forms will not be stored anywhere. Mainly due to
+requirements related to the processing of personal data. I don't want to waste time writing
+<abbr title="Terms of service">TOS</abbr>, privacy policy, report data set to the
+<abbr title="Inspector General for Personal Data Protection, Polish: Generalny Inspektor Ochrony Danych Osobowych">GIODO</abbr>,
+etc.
 
-## Technologia
-Zdecydowałem się na użycie biblioteki <abbr title="JavaScript">JS</abbr> [React][1], ponieważ chcę poćwiczyć Reacta. Ten
-wybór nie był spowodowany żadną inną przyczyną. Dodatkowo planuję użyć [Redux][2], który pomoże mi w zarządzaniu stanem
-aplikacji. Jeżeli cały proces wypełniania formularza ma się odbywać bez udziału backendu, to chciałbym, żeby biężący
-stan aplikacji był łatwy do odtworzenia, na przykład po wczytaniu z [localStorage][3] lub z parametrów
-[<abbr title="Uniform Resource Identifier">URI</abbr>][4].
+## Technology
+I decided to use <abbr title="JavaScript">JS</abbr> library [React][1], because I want to train. This choice wasn't
+caused by any other reason. Additionally I plan to use the [Redux][2], which will help me in managing the state of the
+application. If the whole process of filling out the form is to be carried without the backend, I would like to have the
+current state of the application easily loaded, for example from [localStorage][3] or
+[<abbr title="Uniform Resource Identifier">URI</abbr>][4] parameters.
 
-## Tworzenie i uruchamianie projektu
-Na razie piszę w PhpStormie. Wiem, że to zły wybór do JavaScriptu, ale nie chcę kupować WebStorma. Myślę o użyciu
-[Atoma][5] ale nie miałem dostatecznie dużo czasu, żeby poeksperymentować. Ten blog również jest pisany w Stormie.
+## Creating and running a project
+For now, I'm writing in PhpStorm. I know this is a bad choice for JavaScript, but I don't want to buy WebStorm. I think
+of using [Atom][5] but didn't have enough time to mess around. This blog is also written in PhpStorm.
 
-Projekt utworzyłem wykorzystując narzędzie [Create React App][6] od Facebooka. Taki projekt startowy jest dla mnie
-wystarczający, ma wszystko czego potrzebuję, czyli Webpack, Babel, ESLint. Nie wymaga żadnej konfiguracji i, co
-najważniejsze, działa. Jeżeli potrzebujesz bardziej zaawansowanego projektu startowego, np. z dołączonym "hot
-reloading", routerem, czy innymi funkcjami, możesz użyć tej [wyszukiwarki projektów startowych React][7], żeby znaleźć
-swój idealny starter.
+I created a project using the tool [Create React App][6] provided by Facebook. This project boilerplate is enough for
+me, it contains all I need: Webpack, Babel, ESLint. It doesn't require any configuration and, most importantly, it
+works. If you need more advanced started project, eg. with hot reloading, router, or other functions, you can use this
+[search engine for React started projects] [7], to find your perfect starter.
 
-Jeżeli chodzi o stylowanie, postawiłem na gotowe rozwiązanie [Material-UI][8]. Jest to zestaw komponentów do Reacta,
-który implementuje założenia [Material Design według Google][9]. Formularze konsumenckie to aplikacja użytkowa, więc
-tworzenie własnego wyszukanego projektu graficznego jest zbędne. Natomiast Material Design jest znany użytkownikom,
-chociażby ze względu na [popularność Androida w Polsce][10], dlatego korzystanie z aplikacji powinno być dzięki temu
-dosyć intuicyjne. Z resztą nie oszukujmy się, to nie jest jakiś bardzo skomplikowany projekt.
+When it comes to styling, I use a ready-made solution [Material-UI][8]. It's a set of components for React, which
+implements assumptions of [Material Design by Google][9]. Consumer Forms is an utility app, so creating my own
+sophisticated graphic design is unnecessary. Material Design is known to users, at least because of
+[the popularity of Android in Poland] [10], which is why using the application should be fairly intuitive. To be honest
+this is not a very complicated project.
 
-Tworzenie szkieletu aplikacji jest "stosunkowo proste". Według dokumentacji kreatora wystarczy:
+Creating a skeleton of the application is "relatively simple". According to the documentation it is enough to run:
 
 {% highlight bash %}
 npm install -g create-react-app
@@ -51,12 +51,12 @@ cd my-app/
 npm start
 {% endhighlight %}
 
-Aplikacja działa i jest dostępna pod adresem http://localhost:3000/. Można teraz zacząć pisać. Od początku jest live
-reload, więc wszystkie zmiany są od razu widoczne w przeglądarce, nie trzeba nic konfigurować.
+The application works and is available at http://localhost:3000/. You can now start writing. Since the beginning it has
+live reload, so all changes are immediately visible in the browser, you do not need to configure anything.
 
-Na początku zainstalowałem [`react-router`][11] i wspomniany wcześniej [`material-ui`][12] (a wraz z nim
-[`react-tap-event-plugin`][13]). Do pliku `index.html` dołączyłem kawałek kodu odpowiedzialny za ładowanie czcionki
-[Roboto][14]:
+At the beginning I installed [`react-router`][11] and aforementioned [`material-ui`][12] (and
+[`react-tap-event-plugin`][13]). I included in the file `index.html` a chunk of code responsible for loading
+[Roboto][14] fotn:
 
 {% highlight javascript %}
 var WebFontConfig = {
@@ -72,21 +72,21 @@ var WebFontConfig = {
 })();
 {% endhighlight %}
 
-## Struktura aplikacji i ruter
-Poniżej prezentuję wstępną strukturę aplikacji, podział na podstrony.
-- o co tu chodzi (strona startowa)
-- formularze i wnioski
-  - formularz 1
-  - formularz 2
+## Application structure and routing
+Below I present the initial application structure, divided into pages.
+- o co tu chodzi (strona startowa) - En: about
+- formularze i wnioski - En: forms and applications
+  - formularz 1 - En: form 1
+  - formularz 2 - En: form 2
   - ...
-  - formularz n
-- pozwy, skargi i inne
-  - formularz 1
-  - formularz 2
+  - formularz n - En: form n
+- pozwy, skargi i inne - En: Lawsuits, complaints and other
+  - formularz 1 - En: form 1
+  - formularz 2 - En: form 2
   - ...
-  - formularz n
+  - formularz n - En: form n
 
-Odwzorowanie takiej struktury za pomocą routera:
+Mapping the structure using a router:
 {% highlight jsx %}
 <Router history={browserHistory}>
     <Route path="/" component={App}>
@@ -101,7 +101,7 @@ Odwzorowanie takiej struktury za pomocą routera:
 </Router>
 {% endhighlight %}
 
-Link do repozytorium projektu [https://github.com/mkutyba/FormularzeKonsumenckie][15]
+Link to the project repository [https://github.com/mkutyba/FormularzeKonsumenckie][15]
 
 [1]: https://facebook.github.io/react/
 [2]: http://redux.js.org/
