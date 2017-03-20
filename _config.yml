@@ -38,3 +38,9 @@ defaults:
       image: /assets/images/mateusz-kutyba.png
 
 exclude: [vendor]
+
+twitter:
+  username: kutybait
+
+author:
+  twitter: kutybait
