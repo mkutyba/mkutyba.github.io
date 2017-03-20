@@ -30,13 +30,13 @@ layout: blog
             <p>
                 {% for tag in page.tags %}
                 {% if forloop.first %}Tags:{% endif %}
-                {{ tag }}{% if forloop.last == false %},{% endif %}
+                <span class="a">{{ tag }}</span>
                 {% endfor %}
             </p>
             <p>
                 {% for category in page.categories %}
                 {% if forloop.first %}Categories:{% endif %}
-                <a href="/{{ category | slugify }}.html">{{ category }}</a>{% if forloop.last == false %},{% endif %}
+                <a href="/{{ category | slugify }}.html">{{ category }}</a>
                 {% endfor %}
             </p>
         </footer>
