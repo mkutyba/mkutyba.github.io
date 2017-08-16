@@ -27,7 +27,7 @@ permalink:  /blog/:title.html
 sass:
   style: compressed
 
-gems:
+plugins:
   - jekyll-relative-links
   - jekyll-seo-tag
 
