@@ -346,6 +346,21 @@ section.blog {
         margin-top: 1em;
         margin-bottom: 1em;
       }
+
+      blockquote {
+        background: rgba(255, 255, 255, 0.25);
+        padding: 1em;
+
+        p {
+          &:first-child {
+            margin-top: 0;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
     }
 
     &.single {
