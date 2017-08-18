@@ -1,5 +1,6 @@
 {
-    "name": "kutyba.it",
+    "short_name": "kutyba.it",
+    "name": "kutyba.it - Mateusz Kutyba",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -14,5 +15,8 @@
     ],
     "theme_color": "#4d5d78",
     "background_color": "#4d5d78",
-    "display": "standalone"
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/?utm_source=homescreen"
 }
