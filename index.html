@@ -24,7 +24,7 @@ layout: default
                     <br>Feel free to contact me and inquire about working together. I am very responsive to messages.</p>
 
                 <p class="cta">
-                    <a role="button" tabindex="0" on="tap:contact-lightbox" class="go-button" id="hire-me">Hire me today <i class="fa fa-play"></i></a>
+                    <a role="button" tabindex="0" on="tap:contact-lightbox" class="go-button" id="hire-me">Hire me today <span class="fa fa-play" aria-hidden="true"></span></a>
                 </p>
 
                 <amp-analytics type="googleanalytics" id="analytics-hire-me">
@@ -55,13 +55,13 @@ layout: default
 
 <amp-lightbox id="contact-lightbox" layout="nodisplay">
     <div class="lightbox">
-        <i class="close fa fa-times-circle fa-2x fa-fw" role="button" tabindex="0" on="tap:contact-lightbox.close"></i>
+        <span class="close fa fa-times-circle fa-2x fa-fw" role="button" tabindex="0" on="tap:contact-lightbox.close" aria-hidden="true"><span class="visuallyhidden">Close</span></span>
         <div class="centered">
             <h2>Let's connect and collaborate</h2>
 
             <p>
-                <a href="mailto:hello@kutyba.it" class="email-address link-unstyled"><i class="fa fa-envelope-o"></i> hello@kutyba.it</a>
-                <br><a href="tel:+48725116342" class="telephone-number link-unstyled"><i class="fa fa-mobile fa-lg"></i> +48 725 116 342</a>
+                <a href="mailto:hello@kutyba.it" class="email-address link-unstyled"><span class="fa fa-envelope-o" aria-hidden="true"></span><span class="visuallyhidden">Email</span> hello@kutyba.it</a>
+                <br><a href="tel:+48725116342" class="telephone-number link-unstyled"><span class="fa fa-mobile fa-lg" aria-hidden="true"></span><span class="visuallyhidden">Phone</span> +48 725 116 342</a>
 
                 <amp-analytics type="googleanalytics" id="analytics-email-address">
                     <script type="application/json">
