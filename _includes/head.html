@@ -1,5 +1,7 @@
 <head>
   <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.ampproject.org" crossorigin>
 
   {% seo %}
 
@@ -16,6 +18,29 @@
     }
   </script>
 
+  <script>
+    (function() {
+      if (sessionStorage.fonts) {
+        document.documentElement.classList.add('wf-active');
+      } else {
+        WebFontConfig = {
+          google: {
+            families: ['Open Sans:300,400,700:latin,latin-ext']
+          },
+          active: function() {
+            sessionStorage.fonts = true;
+          }
+        };
+
+        (function(d) {
+          var wf = d.createElement('script'), s = d.scripts[0];
+          wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+          wf.async = true;
+          s.parentNode.insertBefore(wf, s);
+        })(document);
+      }
+    })();
+  </script>
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
@@ -36,7 +61,6 @@
   .fa-chevron-right:before { content: "\f054" }
   .fa-angle-right:before { content: "\f105" }
   </style>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 
   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}{{ base }}/apple-touch-icon.png">
   <link rel="icon" type="image/png" href="{{ site.baseurl }}{{ base }}/favicon-32x32.png" sizes="32x32">
