@@ -1,3 +1,5 @@
+@import 'normalize/normalize';
+@include normalize();
 @import "syntax";
 @import "include-media";
 @import "fontawesome/font-awesome";
