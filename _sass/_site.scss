@@ -18,10 +18,6 @@ body {
   background-image: url("/assets/images/bg-no-credits.jpg");
   background-repeat: no-repeat;
   background-position: center center;
-
-  .wf-active & {
-    font-family: 'Open Sans', $system-font-stack;
-  }
 }
 
 h1, h2, h3, h4, h5, h6 {
