@@ -2,10 +2,12 @@ const CACHE_NAME = 'app-cache';
 
 const urlsToCache = [
   '/',
+  '/?utm_source=homescreen',
   '/index.html',
   '/blog.html',
   '/ecommerce.html',
   '/get-noticed.html',
+  '/blog/my-site-speed-test.html',
   '/blog/i-started-blogging-again.html',
   '/blog/consumer-forms-project-description.html',
   '/blog/testing-testing-testing.html',
