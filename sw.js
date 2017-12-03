@@ -19,6 +19,7 @@ const urlsToCache = [
   '/assets/fonts/fontawesome-webfont-4.6.3.ttf',
   '/assets/fonts/fontawesome-webfont-4.6.3.woff',
   '/assets/fonts/fontawesome-webfont-4.6.3.woff2',
+  '/assets/images/speed-test.jpg',
   '/assets/images/103084-OM8M26-164.jpg',
   '/assets/images/magento-paczka-w-ruchu.png'
 ];
