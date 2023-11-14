@@ -69,35 +69,6 @@
                     </script>
                 </amp-analytics>
                 {% endif %}
-                {% if site.twitter_username %}
-                <a class="social-media" target="_blank" rel="noopener" href="https://twitter.com/{{ site.twitter_username }}" id="tt-link">
-                    <span class="fa fa-twitter-square" aria-hidden="true"></span><span class="visuallyhidden">twitter</span>
-                </a>
-                <amp-analytics type="gtag" data-credentials="include" id="analytics-tt-link">
-                    <script type="application/json">
-                        {
-                            "vars" : {
-                                "gtag_id": "{{ site.uaid }}",
-                                "config" : {
-                                    "{{ site.uaid }}": { "groups": "default" }
-                                }
-                            },
-                            "triggers": {
-                                "trackClickOnTwitterLink": {
-                                    "on": "click",
-                                    "selector": "#tt-link",
-                                    "request": "social",
-                                    "vars": {
-                                        "socialNetwork": "twitter",
-                                        "socialAction": "open",
-                                        "socialTarget": "{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"
-                                    }
-                                }
-                            }
-                        }
-                    </script>
-                </amp-analytics>
-                {% endif %}
             </nav>
         </div>
     </div>
