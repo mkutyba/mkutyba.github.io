@@ -15,11 +15,14 @@
                 <a class="social-media" target="_blank" rel="noopener" href="https://github.com/{{ site.github_username }}" id="github-link">
                     <span class="fa fa-github-square" aria-hidden="true"></span><span class="visuallyhidden">github</span>
                 </a>
-                <amp-analytics type="googleanalytics" id="analytics-github-link">
+                <amp-analytics type="gtag" data-credentials="include" id="analytics-github-link">
                     <script type="application/json">
                         {
-                            "vars": {
-                                "account": "{{ site.uaid }}"
+                            "vars" : {
+                                "gtag_id": "{{ site.uaid }}",
+                                "config" : {
+                                    "{{ site.uaid }}": { "groups": "default" }
+                                }
                             },
                             "triggers": {
                                 "trackClickOnGithubLink": {
@@ -41,11 +44,14 @@
                 <a class="social-media" target="_blank" rel="noopener" href="https://www.linkedin.com/in/{{ site.linkedin_username }}" id="linkedin-link">
                     <span class="fa fa-linkedin-square" aria-hidden="true"></span><span class="visuallyhidden">linkedin</span>
                 </a>
-                <amp-analytics type="googleanalytics" id="analytics-linkedin-link">
+                <amp-analytics type="gtag" data-credentials="include" id="analytics-linkedin-link">
                     <script type="application/json">
                         {
-                            "vars": {
-                                "account": "{{ site.uaid }}"
+                            "vars" : {
+                                "gtag_id": "{{ site.uaid }}",
+                                "config" : {
+                                    "{{ site.uaid }}": { "groups": "default" }
+                                }
                             },
                             "triggers": {
                                 "trackClickOnLinkedinLink": {
@@ -67,11 +73,14 @@
                 <a class="social-media" target="_blank" rel="noopener" href="https://twitter.com/{{ site.twitter_username }}" id="tt-link">
                     <span class="fa fa-twitter-square" aria-hidden="true"></span><span class="visuallyhidden">twitter</span>
                 </a>
-                <amp-analytics type="googleanalytics" id="analytics-tt-link">
+                <amp-analytics type="gtag" data-credentials="include" id="analytics-tt-link">
                     <script type="application/json">
                         {
-                            "vars": {
-                                "account": "{{ site.uaid }}"
+                            "vars" : {
+                                "gtag_id": "{{ site.uaid }}",
+                                "config" : {
+                                    "{{ site.uaid }}": { "groups": "default" }
+                                }
                             },
                             "triggers": {
                                 "trackClickOnTwitterLink": {
