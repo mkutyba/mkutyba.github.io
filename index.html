@@ -24,7 +24,7 @@ layout: default
                 <p>With passion and dedication, I assist companies in achieving success through process optimization, digitization, and efficient management of IT systems.</p>
 
                 <p class="cta">
-                    <a role="button" tabindex="0" on="tap:contact-lightbox" class="go-button" id="hire-me">Hire me today <span class="fa fa-play" aria-hidden="true"></span></a>
+                    <a role="button" tabindex="0" on="tap:contact-lightbox" class="go-button hire-me" id="hire-me">Hire me today <span class="fa fa-play" aria-hidden="true"></span></a>
                 </p>
 
                 <amp-analytics type="gtag" data-credentials="include" id="analytics-hire-me">
@@ -39,7 +39,7 @@ layout: default
                             "triggers": {
                                 "trackClickOnHireMe" : {
                                     "on": "click",
-                                    "selector": "#hire-me",
+                                    "selector": ".hire-me",
                                     "request": "event",
                                     "vars": {
                                         "eventCategory": "click",
@@ -133,6 +133,10 @@ layout: default
     <div class="container">
         <div class="row">
             <h2>How Can I Help You?</h2>
+
+            <p class="cta">
+                <a role="button" tabindex="0" on="tap:contact-lightbox" class="go-button hire-me" id="hire-me1">Hire me today <span class="fa fa-play" aria-hidden="true"></span></a>
+            </p>
 
             <h3>Consulting and Advisory</h3>
             <p>Need support in finding optimal IT solutions? I offer comprehensive consulting, helping identify the most effective strategies tailored to your unique business needs.</p>
