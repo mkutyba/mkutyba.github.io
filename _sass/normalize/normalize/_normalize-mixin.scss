@@ -1,10 +1,10 @@
 // Helper function for the normalize() mixin.
+
+// Initialize the global variables needed by _normalize-include.
+$_normalize-include: () !default;
+$_normalize-exclude: () !default;
+
 @function _normalize-include($section, $exclude: null) {
-  // Initialize the global variables needed by this function.
-  @if not global_variable_exists(_normalize-include) {
-    $_normalize-include: () !global;
-    $_normalize-exclude: () !global;
-  }
   // Since we are given 2 parameters, set the global variables.
   @if $exclude != null {
     $include: $section;
@@ -19,7 +19,7 @@
   @if index($_normalize-include, $section) {
     @return true;
   }
-  // If $include is set to (all), make sure $section is not in $exclude.
+    // If $include is set to (all), make sure $section is not in $exclude.
   @else if not index($_normalize-exclude, $section) and index($_normalize-include, all) {
     @return true;
   }
@@ -31,13 +31,16 @@
   $init: _normalize-include($include, $exclude);
 
   // If we've customized any font variables, we'll need extra properties.
-  @if $base-line-height != 24px
-    or $base-unit != 'em'
-    or $h2-font-size != 1.5  * $base-font-size
-    or $h3-font-size != 1.17 * $base-font-size
-    or $h4-font-size != 1    * $base-font-size
-    or $h5-font-size != 0.83 * $base-font-size
-    or $h6-font-size != 0.67 * $base-font-size {
+  @if $normalize-vertical-rhythm == null
+    and (
+      $base-line-height != 24px
+      or $base-unit != 'em'
+      or $h2-font-size != 1.5  * $base-font-size
+      or $h3-font-size != 1.17 * $base-font-size
+      or $h4-font-size != 1    * $base-font-size
+      or $h5-font-size != 0.83 * $base-font-size
+      or $h6-font-size != 0.67 * $base-font-size
+    ) {
     $normalize-vertical-rhythm: true !global;
   }
 
@@ -49,8 +52,7 @@
 
     /**
      * 1. Correct the line height in all browsers.
-     * 2. Prevent adjustments of font size after orientation changes in
-     *    IE on Windows Phone and in iOS.
+     * 2. Prevent adjustments of font size after orientation changes in iOS.
      */
 
     html {
@@ -69,7 +71,6 @@
       @else {
         line-height: 1.15; /* 1 */
       }
-      -ms-text-size-adjust: 100%; /* 2 */
       -webkit-text-size-adjust: 100%; /* 2 */
     }
   }
@@ -79,7 +80,7 @@
        ========================================================================== */
 
     /**
-     * Remove the margin in all browsers (opinionated).
+     * Remove the margin in all browsers.
      */
 
     body {
@@ -87,15 +88,10 @@
     }
 
     /**
-     * Add the correct display in IE 9-.
+     * Render the `main` element consistently in IE.
      */
 
-    article,
-    aside,
-    footer,
-    header,
-    nav,
-    section {
+    main {
       display: block;
     }
 
@@ -191,27 +187,9 @@
       ul {
         padding: 0 0 0 $indent-amount;
       }
-    }
 
-    /**
-     * Add the correct display in IE 9-.
-     */
-
-    figcaption,
-    figure {
-      display: block;
-    }
-
-    /**
-     * Add the correct margin in IE 8.
-     */
-
-    figure {
-      @if $normalize-vertical-rhythm {
+      figure {
         @include normalize-margin(1 $indent-amount);
-      }
-      @else {
-        margin: 1em $indent-amount;
       }
     }
 
@@ -261,13 +239,11 @@
        ========================================================================== */
 
     /**
-     * 1. Remove the gray background on active links in IE 10.
-     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+     * Remove the gray background on active links in IE 10.
      */
 
     a {
-      background-color: transparent; /* 1 */
-      -webkit-text-decoration-skip: objects; /* 2 */
+      background-color: transparent;
     }
   }
 
@@ -276,7 +252,7 @@
        ========================================================================== */
 
     /**
-     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+     * 1. Remove the bottom border in Chrome 57-
      * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
      */
 
@@ -284,15 +260,6 @@
       border-bottom: none; /* 1 */
       text-decoration: underline; /* 2 */
       text-decoration: underline dotted; /* 2 */
-    }
-
-    /**
-     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
-     */
-
-    b,
-    strong {
-      font-weight: inherit;
     }
 
     /**
@@ -314,23 +281,6 @@
     samp {
       font-family: monospace, monospace; /* 1 */
       font-size: 1em; /* 2 */
-    }
-
-    /**
-     * Add the correct font style in Android 4.3-.
-     */
-
-    dfn {
-      font-style: italic;
-    }
-
-    /**
-     * Add the correct background and color in IE 9-.
-     */
-
-    mark {
-      background-color: #ff0;
-      color: #000;
     }
 
     /**
@@ -368,37 +318,11 @@
        ========================================================================== */
 
     /**
-     * Add the correct display in IE 9-.
-     */
-
-    audio,
-    video {
-      display: inline-block;
-    }
-
-    /**
-     * Add the correct display in iOS 4-7.
-     */
-
-    audio:not([controls]) {
-      display: none;
-      height: 0;
-    }
-
-    /**
-     * Remove the border on images inside links in IE 10-.
+     * Remove the border on images inside links in IE 10.
      */
 
     img {
       border-style: none;
-    }
-
-    /**
-     * Hide the overflow in IE.
-     */
-
-    svg:not(:root) {
-      overflow: hidden;
     }
   }
 
@@ -407,7 +331,7 @@
        ========================================================================== */
 
     /**
-     * 1. Change the font styles in all browsers (opinionated).
+     * 1. Change the font styles in all browsers.
      * 2. Remove the margin in Firefox and Safari.
      */
 
@@ -416,7 +340,7 @@
     optgroup,
     select,
     textarea {
-      font-family: if($base-font-family, $base-font-family, sans-serif); /* 1 */
+      font-family: inherit; /* 1 */
       font-size: 100%; /* 1 */
       @if $normalize-vertical-rhythm {
         line-height: ($base-line-height / $base-font-size) * 1em; /* 1 */
@@ -446,16 +370,14 @@
     }
 
     /**
-     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
-     *    controls in Android 4.
-     * 2. Correct the inability to style clickable types in iOS and Safari.
+     * Correct the inability to style clickable types in iOS and Safari.
      */
 
     button,
-    html [type="button"], /* 1 */
+    [type="button"],
     [type="reset"],
     [type="submit"] {
-      -webkit-appearance: button; /* 2 */
+      -webkit-appearance: button;
     }
 
     button,
@@ -490,8 +412,8 @@
     }
 
     /**
-     * 1. Add the correct box sizing in IE 10-.
-     * 2. Remove the padding in IE 10-.
+     * 1. Add the correct box sizing in IE 10.
+     * 2. Remove the padding in IE 10.
      */
 
     [type="checkbox"],
@@ -519,10 +441,9 @@
       outline-offset: -2px; /* 2 */
 
       /**
-       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+       * Remove the inner padding in Chrome and Safari on macOS.
        */
 
-      &::-webkit-search-cancel-button,
       &::-webkit-search-decoration {
         -webkit-appearance: none;
       }
@@ -563,17 +484,15 @@
     }
 
     /**
-     * 1. Add the correct display in IE 9-.
-     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+     * Add the correct vertical alignment in Chrome, Firefox, and Opera.
      */
 
     progress {
-      display: inline-block; /* 1 */
-      vertical-align: baseline; /* 2 */
+      vertical-align: baseline;
     }
 
     /**
-     * Remove the default vertical scrollbar in IE.
+     * Remove the default vertical scrollbar in IE 10+.
      */
 
     textarea {
@@ -586,7 +505,7 @@
        ========================================================================== */
 
     /*
-     * Add the correct display in Edge, IE, and Firefox.
+     * Add the correct display in Edge, IE 10+, and Firefox.
      */
 
     details {
@@ -601,14 +520,8 @@
       display: list-item;
     }
 
-    /*
-     * Add the correct display in IE 9-.
-     */
-
-    menu {
-      display: block;
-
-      @if $normalize-vertical-rhythm {
+    @if $normalize-vertical-rhythm {
+      menu {
         /*
          * 1. Set 1 unit of vertical rhythm on the top and bottom margin.
          * 2. Set consistent space for the list style image.
@@ -630,17 +543,9 @@
     }
   }
 
-  @if _normalize-include(scripting) {
-    /* Scripting
+  @if _normalize-include(misc) {
+    /* Misc
        ========================================================================== */
-
-    /**
-     * Add the correct display in IE 9-.
-     */
-
-    canvas {
-      display: inline-block;
-    }
 
     /**
      * Add the correct display in IE.
@@ -649,14 +554,9 @@
     template {
       display: none;
     }
-  }
-
-  @if _normalize-include(hidden) {
-    /* Hidden
-       ========================================================================== */
 
     /**
-     * Add the correct display in IE 10-.
+     * Add the correct display in IE 10.
      */
 
     [hidden] {
