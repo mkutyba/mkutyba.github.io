@@ -34,6 +34,14 @@ h2 {
   margin: 0;
 }
 
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
 a {
   color: $white;
   text-decoration: underline;
@@ -219,7 +227,7 @@ section.hero {
   color: $white;
   border: 0;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 1.5em;
   padding: 15px 40px;
   text-decoration: none;
   cursor: pointer;
@@ -244,6 +252,10 @@ section.hero {
   margin-bottom: 40px;
 }
 
+.fs-big {
+  font-size: 1.5em;
+}
+
 .colored {
   color: $primary;
 }
@@ -254,16 +266,12 @@ section.hero {
   position: absolute;
   left: 50%;
   top: 50%;
-  -moz-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 90%;
   max-width: 600px;
   min-height: 100px;
   padding: 30px;
   box-sizing: border-box;
-  -webkit-box-sizing: border-box;
 
   .close {
     position: absolute;

@@ -6,13 +6,12 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Mateusz Kutyba
-email: m@kutyba.it
-description: eCommerce consultant for hire.
+title: Matt (Mateusz) Kutyba
+email: hello@kutyba.it
+description: IT Consultant and Project Manager.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kutyba.it" # the base hostname & protocol for your site
-AUTHOR: Mateusz Kutyba
-twitter_username: kutybait
+AUTHOR: Matt Kutyba
 github_username:  mkutyba
 linkedin_username:  kutyba
 logo: /assets/images/mateusz-kutyba.png
@@ -38,9 +37,3 @@ defaults:
       image: /assets/images/mateusz-kutyba.png
 
 exclude: [vendor]
-
-twitter:
-  username: kutybait
-
-author:
-  twitter: kutybait
