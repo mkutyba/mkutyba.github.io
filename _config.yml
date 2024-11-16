@@ -14,8 +14,8 @@ url: "https://kutyba.it" # the base hostname & protocol for your site
 AUTHOR: Matt Kutyba
 github_username:  mkutyba
 linkedin_username:  kutyba
-logo: /assets/images/mateusz-kutyba.png
-image: /assets/images/mateusz-kutyba.png
+logo: /assets/images/matt-kutyba.png
+image: /assets/images/matt-kutyba.png
 uaid: G-D7FZDT4FN6
 
 # Build settings
@@ -34,6 +34,6 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/mateusz-kutyba.png
+      image: /assets/images/matt-kutyba.png
 
 exclude: [vendor]

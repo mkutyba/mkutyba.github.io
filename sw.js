@@ -13,7 +13,7 @@ const urlsToCache = [
   '/blog/testing-testing-testing.html',
   '/blog/paczka-w-ruchu-modul-do-magento-1-9.html',
   '/assets/images/bg-no-credits.jpg',
-  '/assets/images/mateusz-kutyba.png',
+  '/assets/images/matt-kutyba.png',
   '/assets/fonts/fontawesome-webfont-4.6.3.eot',
   '/assets/fonts/fontawesome-webfont-4.6.3.svg',
   '/assets/fonts/fontawesome-webfont-4.6.3.ttf',
